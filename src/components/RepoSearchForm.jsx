@@ -12,6 +12,10 @@ const FormInput = styled.input`
   background-color: #fafbfc;
   border: 1px solid #d1d5da;
   border-radius: 3px;
+
+  &:focus {
+    background-color: #fff;
+  }
 `;
 
 const FormButton = styled.button`
@@ -25,6 +29,12 @@ const FormButton = styled.button`
   line-height: 20px;
   border: 1px solid rgba(27,31,35,.2);
   border-radius: .25em;
+
+  &:hover,
+  &:focus {
+    background-color: #269f42;
+    background-image: linear-gradient(-180deg,#2fcb53,#269f42 90%);
+  }
 `;
 
 const FormField = styled.div`
