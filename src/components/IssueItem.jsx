@@ -22,20 +22,31 @@ const IssueItemDescription = styled.span`
   font-size: 12px;
 `;
 
-const IssueItem = ({ title, number, author }) => (
-  <IssueItemWrap>
-    <IssueItemTitle>{title}</IssueItemTitle>
-    <IssueItemDescription>
-      #{number} opened by {author}
-    </IssueItemDescription>
-  </IssueItemWrap>
-);
+const IssueItem = (props) => {
+  const {
+    title,
+    number,
+    author,
+    createdAt,
+  } = props;
+  const parsedDate = new Date(createdAt).toLocaleDateString();
+
+  return (
+    <IssueItemWrap>
+      <IssueItemTitle>{title}</IssueItemTitle>
+      <IssueItemDescription>
+        #{number} opened by {author} in {parsedDate}
+      </IssueItemDescription>
+    </IssueItemWrap>
+  );
+};
 
 
 IssueItem.propTypes = {
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
   author: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default IssueItem;

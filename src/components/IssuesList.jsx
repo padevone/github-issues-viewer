@@ -47,6 +47,7 @@ const IssuesList = (props) => {
                 title={issue.title}
                 number={issue.number}
                 author={issue.user.login}
+                createdAt={issue.created_at}
                 key={issue.id}
               />
             ))}
